@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>낙원</title>
+    <link rel="stylesheet" href="styles.css"> <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="mobile-styles.css"> <!-- 모바일 CSS 파일 -->
+    <style>
+        .box {
+            text-align: center; /* 텍스트를 가운데 정렬 */
+            margin-top: 10px; /* 텍스트의 상단 여백 추가 */
+        }
+    </style>
+</head>
+<body>
+  <div class="search-container">
+      <input type="text" placeholder="" id="searchInput">
+      <i class="fas fa-search search-icon"></i>
+  </div>
+  <div class="box-container">
+    <a href="page1.html" class="box"><낙원에서 죽음을 추모하는 방법>, 장은영</a>
+    <a href="page2.html" class="box"><낙원의 생태 보고서>, 강동균</a>
+    <a href="page3.html" class="box"><낙원의 언어>, 김준서</a>
+    <a href="page4.html" class="box"></a>
+    <a href="page4.html" class="box"></a>
+    <a href="page4.html" class="box"></a>
+    <a href="page4.html" class="box"></a>
+    <br><br><br>
+  </div>
+
+  <script>
+    // 검색 이벤트 핸들러
+    document.getElementById("searchInput").addEventListener("input", function() {
+        var searchValue = this.value.toLowerCase(); // 검색어를 소문자로 변환
+        var boxes = document.querySelectorAll(".box"); // 모든 박스 요소 선택
+
+        boxes.forEach(function(box) {
+            var boxText = box.textContent.toLowerCase(); // 각 박스의 텍스트를 소문자로 변환
+            if (boxText.includes(searchValue)) { // 검색어가 포함된 경우
+                box.style.display = "block"; // 해당 박스를 표시
+            } else {
+                box.style.display = "none"; // 그렇지 않은 경우 숨김
+            }
+        });
+    });
+  </script>
+</body>
+</html>
